@@ -3628,7 +3628,7 @@ IDE_Morph.prototype.setStageExtent = function (aPoint) {
 // BlockMorph.prototype = new SyntaxElementMorph();
 // BlockMorph.prototype.constructor = BlockMorph;
 // BlockMorph.uber = SyntaxElementMorph.prototype;
-// console.log(BlockMorph.prototype);
+console.log(BlockMorph.prototype);
 BlockMorph.prototype.snapSound = document.createElement('audio');
 BlockMorph.prototype.snapSound.src = 'click.wav';
 //
@@ -3648,7 +3648,7 @@ IDE_Morph.prototype.userClickingSoundMenu = function () {
     soundsArr.push("no sound");
     soundsArr.forEach(function (sounddd) {
         menu.addItem(
-            (BlockMorph.prototype.snapSound.src.contains(sounddd + ".wav") === true ? '\u2713 ' : '    ') +
+            (BlockMorph.prototype.snapSound.src.search(sounddd+".wav") != -1 ? '\u2713 ' : '    ') +
             sounddd,
             function () {myself.setClickingSound(sounddd);}
             //myself.setClickingSound(sounddd)
